@@ -1,0 +1,296 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 80px;
+    background: var(--white);
+    overflow: hidden;
+}
+
+.inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.left {
+    padding: 40px 0;
+}
+
+.title {
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.05rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 32px;
+    max-width: 520px;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+}
+
+.stats {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 0;
+    border-top: 1px solid var(--border-light);
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.statNum {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.statLabel {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.statDivider {
+    width: 1px;
+    height: 40px;
+    background: var(--border);
+}
+
+/* Hero Visual - Floating cards around logo */
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroVisual {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+.circuitPattern {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--off-white) 0%, transparent 70%);
+}
+
+.centerLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: 0 8px 40px var(--shadow-md);
+}
+
+.centerLogo img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.floatingCard {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 20px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px var(--shadow);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--navy);
+    animation: floatCard 6s ease-in-out infinite;
+    border: 1px solid var(--border-light);
+}
+
+.floatingCard span:first-child {
+    font-size: 1.6rem;
+}
+
+.floatingCard:nth-child(1) {
+    top: 5%;
+    left: 10%;
+}
+
+.floatingCard:nth-child(2) {
+    top: 5%;
+    right: 10%;
+}
+
+.floatingCard:nth-child(3) {
+    top: 50%;
+    right: -5%;
+    transform: translateY(-50%);
+}
+
+.floatingCard:nth-child(4) {
+    bottom: 5%;
+    left: 15%;
+}
+
+.floatingCard:nth-child(5) {
+    bottom: 5%;
+    right: 15%;
+}
+
+@keyframes floatCard {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.floatingCard:nth-child(3) {
+    animation: floatCard3 6s ease-in-out infinite;
+}
+
+@keyframes floatCard3 {
+
+    0%,
+    100% {
+        transform: translateY(-50%) translateX(0);
+    }
+
+    50% {
+        transform: translateY(calc(-50% - 12px)) translateX(0);
+    }
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.scrollIndicator span {
+    writing-mode: vertical-lr;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.scrollLine {
+    width: 1px;
+    height: 60px;
+    background: var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.scrollLine::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: var(--gold);
+    animation: scrollDown 2s ease-in-out infinite;
+}
+
+@keyframes scrollDown {
+    0% {
+        top: -50%;
+    }
+
+    100% {
+        top: 100%;
+    }
+}
+
+@media (max-width: 968px) {
+    .inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+
+    .heroVisual {
+        max-width: 380px;
+    }
+
+    .scrollIndicator {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .floatingCard {
+        padding: 10px 14px;
+        font-size: 0.7rem;
+    }
+
+    .floatingCard span:first-child {
+        font-size: 1.2rem;
+    }
+
+    .centerLogo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .centerLogo img {
+        width: 60px;
+        height: 60px;
+    }
+}

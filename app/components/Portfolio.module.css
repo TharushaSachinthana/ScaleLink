@@ -1,0 +1,144 @@
+.portfolio {
+    padding: var(--section-padding);
+    background: var(--white);
+}
+
+.header {
+    margin-bottom: 30px;
+}
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filterLabel {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-right: 8px;
+}
+
+.filterBtn {
+    background: none;
+    border: none;
+    padding: 8px 18px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-light);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
+}
+
+.filterBtn:hover {
+    color: var(--navy);
+    background: var(--off-white);
+}
+
+.filterBtn.active {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px var(--shadow-md);
+}
+
+.cardImage {
+    width: 100%;
+    aspect-ratio: 16/10;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.cardPlaceholder {
+    font-size: 3rem;
+    opacity: 0.3;
+    transition: all 0.4s ease;
+}
+
+.card:hover .cardPlaceholder {
+    transform: scale(1.2);
+    opacity: 0.5;
+}
+
+.cardOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 27, 45, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.card:hover .cardOverlay {
+    opacity: 1;
+}
+
+.cardOverlay h3 {
+    color: var(--white);
+    font-size: 1.3rem;
+}
+
+.cardCat {
+    color: var(--gold-light);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.cardInfo {
+    padding: 20px;
+}
+
+.cardInfo h4 {
+    font-size: 1.05rem;
+    color: var(--navy);
+    margin-bottom: 4px;
+}
+
+.cardInfo p {
+    font-size: 0.88rem;
+    color: var(--text-light);
+}
+
+@media (max-width: 968px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}

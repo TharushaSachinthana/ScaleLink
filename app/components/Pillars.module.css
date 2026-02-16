@@ -1,0 +1,92 @@
+.pillars {
+    padding: var(--section-padding);
+    background: var(--off-white);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    transition: all 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px var(--shadow-md);
+    border-color: var(--gold-pale);
+}
+
+.cardIcon {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 16px;
+    background: var(--off-white);
+    border-radius: 16px;
+}
+
+.cardContent {
+    position: relative;
+    z-index: 1;
+}
+
+.cardSubtitle {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.cardTitle {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--navy);
+}
+
+.cardText {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.cardNumber {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--off-white);
+    line-height: 1;
+    z-index: 0;
+    transition: color 0.4s ease;
+}
+
+.card:hover .cardNumber {
+    color: var(--gold-pale);
+}
+
+@media (max-width: 968px) {
+    .grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
