@@ -27,7 +27,7 @@ The admin panel lets you manage all website content (services, portfolio, testim
 ### How to Access
 
 1. Navigate to **http://localhost:3000/admin** (or `https://yourdomain.com/admin` in production)
-2. Enter password: `scalelink2026`
+2. Enter password: ``
 3. You'll see the admin dashboard with sidebar navigation
 
 ### What You Can Edit
